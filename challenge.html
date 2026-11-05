@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Challenge Section</title>
+    <meta name="comp1800 template" content="My 1800 App">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        
+        @import url(https://fonts.googleapis.com/css?family=Hind);
+
+        html {
+            font-family: hind;
+            font-weight: bold;
+            text-align: center;
+        }
+
+
+        #icon1 {
+            padding-top:15%;
+        }
+
+        #icon1 img {
+
+            max-width: 20%;
+            max-height: 20%;
+        }
+        
+        #icon2 img {
+            max-width: 40px;
+            max-height: 40px;
+        }
+
+        #navbar {
+            margin-top: 30%;
+            background-color: #d9d9d9;
+            min-width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        #navbar #navbar-icon img {
+            max-width: 20%;
+            max-height: 20%;
+        }
+    </style>
+
+    <!-- Web Components for shared navbar and footer layout -->
+    <!-- <script type="module" src="/src/components/site-navbar.js"></script> -->
+    <!-- <script type="module" src="/src/components/site-footer.js"></script> -->
+</head>
+
+<body>
+
+
+    </div>
+    <div id="icon1">
+        <figure>
+            <img src="./public/images/challenge.png">
+            <figcaption>
+                <h1>No challenge yet</h1>
+            </figcaption>
+
+        </figure> 
+
+    </div>
+    <a href="makeChallenge.html" id="icon2">
+        <img src="./public/images/plus.png">
+    </a>
+
+    <div id="navbar">   
+        <div id="navbar-icon">
+            <figure>
+                <img src="./public/images/navbaricon1.png">
+                <figcaption>
+                    <h2>Challenge</h2>
+                </figcaption>
+            </figure>
+        </div>
+        <div id="navbar-icon">
+            <figure>
+                <img src="./public/images/navbaricon2.png">
+                <figcaption>
+                    <h2>Calendar</h2>
+                </figcaption>
+            </figure>
+        </div>
+        <div id="navbar-icon">
+            <figure>
+                <img src="./public/images/navbaricon3.png">
+                <figcaption>
+                    <h2>Profile</h2>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <!-- our own navbar goes here -->
+    <!-- <site-navbar></site-navbar> -->
+    
+    <!-- Main content goes here -->
+
+    <!-- our own footer goes here -->
+    <!-- <site-footer></site-footer> -->
+    
+    <!---------------------------------------------->
+    <!-- Your own JavaScript scripts go here      -->
+    <!---------------------------------------------->
+
+    <script type="module" src="/src/app.js"></script>
+
+</body>
+
+</html>
