@@ -1,1 +1,113 @@
+@import url(https://fonts.googleapis.com/css?family=Hind);
+html {
+    font-family: hind;
+    font-weight: bold;
+    text-align: center;
+    overflow-x: hidden;
+}
 
+#challenge {
+    background-color: #d9d9d9;
+
+}
+#back-button {
+    max-width: 60px;
+    max-height: 60px;
+    margin-right: 100vw;
+    margin-left: 2vw;
+    margin-top: 2vh;
+}
+
+#arrow-icon {
+    max-width: 80px;
+    max-height: 80px;
+    padding-left: 38%;
+    padding-right: 38%;
+
+}
+#icon1 {
+    padding-top:15%;
+}
+
+#icon1 img {
+
+    max-width: 20%;
+    max-height: 20%;
+}
+
+#icon2 img {
+    max-width: 40px;
+    max-height: 40px;
+}
+
+#add-subtask {
+    max-width: 60px;
+    max-height: 60px;
+    margin-top: 2vh;
+}
+
+#input-field {
+    display: grid;
+    background-color: #d9d9d9;
+    align-items: center;
+
+}
+#subtask {
+    background-color: #8f8f8f;
+    display: grid;
+    grid-template-areas: "s1 s2 s3";
+    max-width: 80%;
+    margin-left: 6.5vw;
+    margin-top: 5vh;
+}
+#s1 {
+    grid-area:s1;
+}
+#s2 {
+    grid-area:s2;
+}
+#s3 {
+    grid-area:s3;
+}
+
+#dates {
+    align-items: center;
+    margin-top: 50vh;
+    margin-left: 30%;
+    margin-bottom: 5vh;
+
+    max-width: 40%;
+    background-color: #8f8f8f;
+    display: grid;
+    grid-template-columns: 1fr;
+
+
+}
+
+#text-class1 {
+    text-align: left;
+    padding: 4vw;
+}
+
+
+
+#icon2 img {
+    max-width: 40px;
+    max-height: 40px;
+}
+
+#navbar {
+    margin-top: 30%;
+    background-color: #d9d9d9;
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    bottom: 0;
+
+    padding-top: 1vh;
+}
+
+#navbar #navbar-icon img {
+    max-width: 20%;
+    max-height: 20%;
+}

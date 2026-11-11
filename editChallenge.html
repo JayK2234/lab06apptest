@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Edit challenge</title>
+    <meta name="comp1800 template" content="My 1800 App">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./src/styles/style.css">
+
+
+    <!-- Web Components for shared navbar and footer layout -->
+    <!-- <script type="module" src="/src/components/site-navbar.js"></script> -->
+    <!-- <script type="module" src="/src/components/site-footer.js"></script> -->
+</head>
+
+<body>
+    <div id="input-field">
+        <img id="back-button" src="./public/images/back.png" alt="Back">
+
+        <form id="challengeForm">
+            <h1>Edit Challenge and subtasks</h1>
+            <input type="text" id="challengeTitle" placeholder="Enter new challenge title" required>
+
+            <div id="subtask">
+                <div id="s1">
+                    <h2 id="text-class1">Subtask:</h2>
+                    <textarea id="SubtaskTitle" placeholder="Subtask title..."></textarea>
+
+                </div>
+                <div id="s2">
+                    <h2 id="text-class1">Description:</h2>
+                    <textarea id="SubtaskDescription" placeholder="Describe your subtask..."></textarea>
+                </div>
+                <div id="s3">
+                    <h2 id="text-class1">Due Date:</h2>
+                    <input type="date" id="subtaskDueDate" required>
+                </div>
+
+            </div>
+            <div>
+                <img id="add-subtask" src="./public/images/addSubtask.png" alt="Add Subtask">
+            </div>
+
+            <div id="dates">
+
+                <div>
+                    <p>End Date</p>
+                    <input type="date" id="endDate" required>
+                </div>
+            </div>
+
+            <button type="submit">Next</button>
+        </form>
+    </div>
+
+
+
+
+
+
+
+    <div id="navbar">
+        <div id="navbar-icon">
+            <figure>
+                <img src="./public/images/navbaricon1.png">
+                <figcaption>
+                    <h2>Challenge</h2>
+                </figcaption>
+            </figure>
+        </div>
+        <div id="navbar-icon">
+            <figure>
+                <img src="./public/images/navbaricon3.png">
+                <figcaption>
+                    <h2>Profile</h2>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <!-- our own navbar goes here -->
+    <!-- <site-navbar></site-navbar> -->
+
+    <!-- Main content goes here -->
+
+    <!-- our own footer goes here -->
+    <!-- <site-footer></site-footer> -->
+
+    <!---------------------------------------------->
+    <!-- Your own JavaScript scripts go here      -->
+    <!---------------------------------------------->
+
+    <script type="module" src="/src/app.js"></script>
+    <script type="module" src="/src/challenge.js"></script>
+
+</body>
+
+</html>
