@@ -1,40 +1,53 @@
-import { db } from './firebaseConfig.js';
-import { onAuthReady } from "./authentication.js";
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-
-let currentUser = null;
-onAuthReady(function (user) {
-    if (!user) {
-        location.href = "index.html";   // Not logged in → go away
-        return;
-    }
-    currentUser = user;                 // Logged in → remember them
-});
+import { onAuthReady } from "/src/authentication.js";
+import { db } from "./firebaseConfig.js";
+import { doc, onSnapshot } from "firebase/firestore";
+import { collection, getDocs, addDoc, serverTimestamp } from "firebase/firestore";
+import { getDoc, setDoc, arrayUnion, arrayRemove } from "firebase/firestore";
 
 
-// ---- (1) What to do when the form is submitted ----
-async function saveChallenge(event) {
-    event.preventDefault();   // Stop the browser from reloading the page
+async function displayChallengesDynamically() {
 
-    // 1. Collect the form values into ONE object (this becomes the Firestore document)
-    const newChallenge = {
-        title: document.getElementById("challengeTitle").value,
-        description: document.getElementById("challengeDescription").value,
-        startDate: document.getElementById("startDate").value,
-        endDate: document.getElementById("endDate").value,
-        owner: currentUser.uid,                                      // WHO added it
-        ownerName: currentUser.displayName || currentUser.email,
-        last_updated: serverTimestamp()                              // WHEN it was added
-    };
+    // reference to the challenges collection
+    const challengesRef = collection(db, "challenges");
 
-    // 2. Save it to the "challenges" collection
-    try {
-        await addDoc(collection(db, "challenges"), newChallenge);
-        location.href = "challenge.html";    // 3. Go back to main page
-    } catch (error) {
-        alert(`Error saving challenge:\n${error.code || ""}\n${error.message || error}`);
-    }
+    // get the template from front-end
+    let challengeTemplate = document.getElementById("challengeCardTemplate");
+
+    // read the challenges collection
+    const querySnapshot = await getDocs(challengesRef);
+
+    // loop through all challenges
+    querySnapshot.forEach(doc => {
+
+        // create a copy of the template
+        let newcard = challengeTemplate.content.cloneNode(true);
+
+        // read this challenge in the loop
+        const challenge = doc.data();
+
+        // populate data in the template
+        newcard.querySelector('.card-title').textContent = challenge.title;
+
+        // link to the individual challenge page
+        newcard.querySelector(".read-more").href =
+            `eachChallenge.html?docID=${doc.id}`;
+
+        // attach the template to the front-end
+        document.getElementById("challenges-go-here").appendChild(newcard);
+
+    });
+
 }
 
-// ---- (2) Listen for form submission ----
-document.getElementById("challengeForm").addEventListener("submit", saveChallenge);
+// Runs once Firebase knows if someone is logged in
+onAuthReady(async function (user) {
+
+    if (!user) {
+        location.href = "index.html";
+    } else {
+        
+
+        displayChallengesDynamically();
+    }
+
+});

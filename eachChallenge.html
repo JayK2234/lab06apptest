@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My BCIT Project</title>
+    <meta name="comp1800 template" content="My 1800 App">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Web Components for shared navbar and footer layout -->
+    <!-- <script type="module" src="/src/components/site-navbar.js"></script> -->
+    <!-- <script type="module" src="/src/components/site-footer.js"></script> -->
+</head>
+
+<body>
+
+    <button onclick="history.back()">Go Back</button>
+
+
+    <div class="container">
+
+    <h1 id="challenge-title"></h1>
+
+    <h2>Challenge Information</h2>
+
+    <p>Start Date: <span id="startDate"></span></p>
+
+    <p>End Date: <span id="endDate"></span></p>
+
+    <h2>Subtask Information</h2>
+
+    <p>Title: <span id="subtask-title"></span></p>
+
+    <p>Description: <span id="subtask-description"></span></p>
+
+    <p>Due Date: <span id="subtask-dueDate"></span></p>
+
+    <h2>Other Information</h2>
+
+    <p>Owner: <span id="ownerName"></span></p>
+
+    <p>Last Updated: <span id="last-updated"></span></p>
+
+</div>
+
+    <script type="module" src="/src/app.js"></script>
+    <script type="module" src="/src/eachChallenge.js"></script>
+
+</body>
+
+</html>

@@ -17,6 +17,8 @@
 </head>
 
 <body>
+    <button onclick="history.back()">Go Back</button>
+
     <div id="input-field">
         <img id="back-button" src="./public/images/back.png" alt="Back">
 
@@ -27,16 +29,16 @@
             <div id="subtask">
                 <div id="s1">
                     <h2 id="text-class1">Subtask:</h2>
-                    <textarea id="SubtaskTitle" placeholder="Subtask title..."></textarea>
+                    <input type="text" id="subtaskTitle" placeholder="Enter your subtask" required>
 
                 </div>
                 <div id="s2">
                     <h2 id="text-class1">Description:</h2>
-                    <textarea id="SubtaskDescription" placeholder="Describe your subtask..."></textarea>
+                    <input type="text" id="subtaskDescription" placeholder="Describe your subtask" required>
                 </div>
                 <div id="s3">
                     <h2 id="text-class1">Due Date:</h2>
-                    <input type="date" id="subtaskDueDate" required>
+                    <input type="date" id="subtaskDate" required>
                 </div>
 
             </div>
@@ -100,7 +102,7 @@
     <!---------------------------------------------->
 
     <script type="module" src="/src/app.js"></script>
-    <script type="module" src="/src/challenge.js"></script>
+    <script type="module" src="/src/makeChallenge.js"></script>
 
 </body>
 
