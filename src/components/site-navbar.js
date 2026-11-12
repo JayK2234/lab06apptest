@@ -11,7 +11,7 @@ class SiteNavbar extends HTMLElement {
     renderNavbar() {
         this.innerHTML = `
             <!-- Navbar: single source of truth -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-info">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="/">
                         <img alt="Image" src="https://dummyimage.com/40x40">
@@ -22,15 +22,7 @@ class SiteNavbar extends HTMLElement {
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto" style="list-style: none; padding: 0; margin: 0;">
-                            <li class="nav-item">
-                                
-                                
-                                <li style="display: inline-block; margin-right: 15px;">Challenge</li>
-                                <li style="display: inline-block; margin-right: 15px;">Schedule</li>
-                                <li style="display: inline-block; margin-right: 15px;">Profile</li>
-                            </li>
-                        </ul>
+
                         <div class="d-flex align-items-center gap-2 ms-lg-2" id="rightControls">
                             
                             <div id="authControls" class="auth-controls d-flex align-items-center gap-2 my-2 my-lg-0">
@@ -47,7 +39,7 @@ class SiteNavbar extends HTMLElement {
         const authControls = this.querySelector('#authControls'); // Find #authControls inside this navbar
 
         // Invisible placeholder prevents layout shifting while Firebase checks login status
-        authControls.innerHTML = `<div class="btn btn-outline-light" style="visibility: hidden; min-width: 80px;">Log out</div>`;
+        authControls.innerHTML = `<div class="btn btn-outline-dark" style="visibility: hidden; min-width: 80px;">Log out</div>`;
 
         // Pass a callback that runs when Firebase reports the login status
         onAuthReady(function(user) { // Receives the user object (or null)
