@@ -21,11 +21,38 @@
     <div id="challenges-go-here"></div>
 
     <template id="challengeCardTemplate">
+
         <div class="card">
-            <h2 class="card-title"></h2>
-            <i class="bi bi-check-circle text-danger fs-4 fav-btn position-absolute top-0 end-0 m-2" role="button" title="checked"></i>
-            <a href="#" class="read-more">Read More</a>
+
+            <div class="card-header">
+                <h2 class="card-title"></h2>
+                <i class="bi bi-check-circle text-danger fs-4 fav-btn" role="button" title="Mark as checked"></i>
+            </div>
+
+            <!-- <div class="card-info"> -->
+                <!-- <p class="owner-name"></p> -->
+                <!-- <p class="term"></p> -->
+                <!-- <p class="last-updated"></p> -->
+            <!-- </div> -->
+
+
+            <!-- Hidden info -->
+            <div class="card-details">
+                <p class="description"></p>
+                <p class="due-date"></p>
+                <!-- Days remaining gauge -->
+                <div class="gauge-container">
+                    <div class="gauge">
+                        <div class="gauge-inner">
+                            <span class="days-left"></span>
+                            <small>days left</small>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="read-more">Read More</a>
+            </div>
         </div>
+
     </template>
 
 

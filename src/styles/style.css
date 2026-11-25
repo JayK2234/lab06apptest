@@ -111,3 +111,141 @@ html {
     max-width: 20%;
     max-height: 20%;
 }
+
+/* Challenge card */
+.card {
+    position: relative;
+    width: 700px;
+    min-height: 100px;
+
+    padding: 20px;
+    margin: 20px;
+
+    background-color: white;
+    border-radius: 15px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition: 0.5s;
+}
+
+
+/* Card header */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-title {
+    font-size: 20px;
+    margin: 0;
+}
+
+.fav-btn {
+    cursor: pointer;
+}
+
+
+/* Basic information */
+.card-info {
+    margin-top: 10px;
+    color: gray;
+    font-size: 13px;
+}
+
+.card-info p {
+    margin: 5px 0;
+}
+
+
+/* Hidden details */
+.card-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+
+    transition: 0.5s;
+}
+
+
+/* Expand when hovering */
+.card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover .card-details {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 15px;
+}
+
+
+/* Description */
+.description {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+
+/* Due date */
+.due-date {
+    font-size: 13px;
+    color: #777;
+    font-weight: bold;
+}
+
+
+/* Gauge */
+.gauge-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.gauge {
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Gauge center */
+.gauge-inner {
+    width: 85px;
+    height: 85px;
+
+    background: rgba(151, 26, 26, 0);
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Days remaining number */
+.days-left {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.gauge-inner small {
+    font-size: 11px;
+    color: gray;
+}
+
+

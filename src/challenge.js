@@ -7,6 +7,32 @@ import { getDoc, setDoc, arrayUnion, arrayRemove } from "firebase/firestore";
 let currentUser = null;   // who is logged in
 let checked = [];      // the hike IDs they've favourited
 
+// Calculate how many days are left
+function getDaysLeft(dueDate) {
+
+    let today = new Date();
+    let due = new Date(dueDate + "T00:00:00");
+    today.setHours(0, 0, 0, 0);
+    let difference = due - today;
+
+    // Convert milliseconds into days
+    let daysLeft = Math.ceil(
+        difference / (1000 * 60 * 60 * 24)
+    );
+
+    return daysLeft;
+}
+
+// Display date 
+function formatDate(date) {
+
+    if (!date) {
+        return "Not available";
+    }
+    let newDate = new Date(date + "T00:00:00");
+    return newDate.toLocaleDateString("en-CA");
+}
+
 
 async function displayChallengesDynamically() {
 
@@ -28,8 +54,88 @@ async function displayChallengesDynamically() {
         // read this challenge in the loop
         const challenge = doc.data();
 
-        // populate data in the template
-        newcard.querySelector('.card-title').textContent = challenge.title;
+        newcard.querySelector(".card-title").textContent =
+            challenge.title;
+
+        newcard.querySelector(".description").textContent =
+            challenge.description;
+
+        newcard.querySelector(".due-date").textContent =
+            "Due date: " + formatDate(challenge.dueDate);
+
+        // newcard.querySelector(".owner-name").textContent =
+            // "Owner: " + challenge.ownerName;
+
+        // newcard.querySelector(".term").textContent =
+            // "Term: " + challenge.term;
+
+        // newcard.querySelector(".last-updated").textContent =
+            // "Last updated: " + formatDate(challenge.last_updated);
+
+
+
+        let daysLeft = getDaysLeft(challenge.dueDate);
+
+        let daysLeftElement = newcard.querySelector(".days-left");
+
+        let gauge = newcard.querySelector(".gauge");
+
+         // Display days remaining
+        if (daysLeft > 0) {
+            daysLeftElement.textContent = daysLeft;
+        }
+        else if (daysLeft === 0) {
+            daysLeftElement.textContent = "Today";
+        }
+        else {
+            daysLeftElement.textContent = "Overdue";
+        }
+
+
+        let progress = (daysLeft / 30) * 100;
+
+        // Prevent percentage from exceeding 100%
+        if (progress > 100) {
+            progress = 100;
+        }
+
+        if (progress < 0) {
+            progress = 0;
+        }
+
+        let gaugeColor;
+
+        if (daysLeft < 0) {
+
+            gaugeColor = "#7e7e7e";
+
+        }
+        else if (daysLeft <= 3) {
+
+            gaugeColor = "#f3372a";
+
+        }
+        else if (daysLeft <= 7) {
+
+            gaugeColor = "#f19408";
+
+        }
+        else {
+
+            gaugeColor = "#4fbd53";
+
+        }
+
+
+
+         // Display gauge
+        gauge.style.background = `
+            conic-gradient(
+                ${gaugeColor} ${progress}%,
+                #a7a7a7 ${progress}%
+            )
+        `;
+
 
         // link to the individual challenge page
         newcard.querySelector(".read-more").href =
@@ -105,3 +211,5 @@ onAuthReady(async function (user) {
     displayChallengesDynamically();                                 // 4. Draw the cards
   }
 });
+
+

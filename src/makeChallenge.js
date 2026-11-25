@@ -14,19 +14,17 @@ onAuthReady(function (user) {
 
 // ---- (1) What to do when the form is submitted ----
 async function saveChallenge(event) {
-    event.preventDefault();   // Stop the browser from reloading the page
+    event.preventDefault();   
 
-    // 1. Collect the form values into ONE object (this becomes the Firestore document)
+    
     const newChallenge = {
         title: document.getElementById("challengeTitle").value,
-        subtask_title: document.getElementById("subtaskTitle").value,
-        subtask_description: document.getElementById("subtaskDescription").value,
-        subtask_dueDate: document.getElementById("subtaskDate").value,
-        startDate: document.getElementById("startDate").value,
-        endDate: document.getElementById("endDate").value,
-        owner: currentUser.uid,                                      // WHO added it
+        description: document.getElementById("challengeDescription").value,
+        dueDate: document.getElementById("dueDate").value,
+        term: 3,
+        owner: currentUser.uid,                                 
         ownerName: currentUser.displayName || currentUser.email,
-        last_updated: serverTimestamp()                              // WHEN it was added
+        last_updated: serverTimestamp()                             
     };
 
     // 2. Save it to the "challenges" collection

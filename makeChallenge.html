@@ -25,50 +25,25 @@
         <form id="challengeForm">
             <h1>What's your challenge?</h1>
             <input type="text" id="challengeTitle" placeholder="Enter your challenge" required>
-
-            <div id="subtask">
-                <div id="s1">
-                    <h2 id="text-class1">Subtask:</h2>
-                    <input type="text" id="subtaskTitle" placeholder="Enter your subtask" required>
-
-                </div>
-                <div id="s2">
-                    <h2 id="text-class1">Description:</h2>
-                    <input type="text" id="subtaskDescription" placeholder="Describe your subtask" required>
-                </div>
-                <div id="s3">
-                    <h2 id="text-class1">Due Date:</h2>
-                    <input type="date" id="subtaskDate" required>
-                </div>
-
-            </div>
+            <h2>Description</h2>
+            <input type="text" id="challengeDescription" placeholder="Enter your challenge" required>
             <div>
                 <img id="add-subtask" src="./public/images/addSubtask.png" alt="Add Subtask">
             </div>
 
             <div id="dates">
-                <div>
-                    <p>Start Date</p>
-                    <input type="date" id="startDate" required>
-                </div>
 
                 <img id="arrow-icon" src="./public/images/arrow.png" alt="To">
 
                 <div>
-                    <p>End Date</p>
-                    <input type="date" id="endDate" required>
+                    <p>Due Date</p>
+                    <input type="date" id="dueDate" required>
                 </div>
             </div>
 
-            <button type="submit">Next</button>
+            <button type="submit">Make challenge</button>
         </form>
     </div>
-
-
-
-
-
-
 
     <div id="navbar">
         <div id="navbar-icon">
