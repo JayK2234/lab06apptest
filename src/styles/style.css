@@ -249,3 +249,34 @@ html {
 }
 
 
+body {
+    padding-top: 70px;
+}
+
+:root {
+    /* ---------- 1. Our design palette ----------
+       Same variable names for everyone. Global.
+       Customize colours and font HERE only. */
+
+    /* 60% Background */
+    --background: #d0ccd0;
+
+    /* 30% Primary and secondary */
+    --primary: #274156;
+    --secondary: #fbfcff;
+
+    /* 10% Accent */
+    --accent: #605856;
+
+    /* Font (import from Google Fonts first) */
+    --font: "Agrave Pro", system-ui, sans-serif;
+
+    /* ---------- 2. Bootstrap variables ----------
+       Connect Bootstrap to OUR design choices. */
+
+    /* Page background */
+    --bs-body-bg: var(--background);
+
+    /* Font for the whole page */
+    --bs-body-font-family: var(--font);
+}

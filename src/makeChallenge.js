@@ -21,7 +21,7 @@ async function saveChallenge(event) {
         title: document.getElementById("challengeTitle").value,
         description: document.getElementById("challengeDescription").value,
         dueDate: document.getElementById("dueDate").value,
-        term: 3,
+        status: "ongoing",
         owner: currentUser.uid,                                 
         ownerName: currentUser.displayName || currentUser.email,
         last_updated: serverTimestamp()                             
