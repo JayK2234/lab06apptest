@@ -115,8 +115,8 @@ html {
 /* Challenge card */
 .card {
     position: relative;
-    width: 700px;
-    min-height: 100px;
+    width: 2500px;
+    min-height: 120px;
 
     padding: 20px;
     margin: 20px;
